@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SearchResult from './SearchResult';
-import './SearchList.css';
+import s from './SearchList.css';
 
 class SearchList extends Component {
 
@@ -15,7 +15,7 @@ render() {
           key={result.link} />
       );
     return (
-      <section className="SearchList">
+      <section className={s.SearchList}>
         {searchResultsArray}
       </section>
     );

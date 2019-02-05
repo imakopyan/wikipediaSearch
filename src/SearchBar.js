@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './SearchBar.css';
+import s from './SearchBar.css';
 
 class SearchBar extends Component {
     constructor(props) {
@@ -19,7 +19,7 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <div className="SearchBar">
+            <div className={s.SearchBar}>
                 <h1>Wikipedia Search</h1>
                 <form onSubmit={this.handleSearchSubmit}>
                     <input
@@ -27,7 +27,7 @@ class SearchBar extends Component {
                         placeholder="Введите запрос"
                         autoFocus
                         onChange={this.handleSearchChange} />
-                    <button className="SearchBar-btn">
+                    <button className={s.SearchBarBtn}>
                     Поиск
                     </button>
                 </form>
