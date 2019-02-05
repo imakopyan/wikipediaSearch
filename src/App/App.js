@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import SearchBar from './SearchBar';
-import SearchList from './SearchList';
-import parseJson from './parseJson';
+import SearchBar from '../SearchBar/SearchBar';
+import SearchList from '../SearchList/SearchList';
+import parseJson from '../parseJson';
 
 import s from './App.css';
 
@@ -39,8 +39,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className={s.App}>
-        <header className={s.AppHeader}>
+      <div className={s.app}>
+        <header className={s.appHeader}>
       <SearchBar 
         onSearchSubmit={this.handleSearch}
         onSearchChange={this.handleChange}

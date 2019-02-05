@@ -1,9 +1,9 @@
 @import url('/src/logo.svg');
 
-.SearchBarBtn {
+.submit {
     cursor: pointer;
 }
 
-.SearchBar form {
+.search-bar form {
     display: flex;
 }

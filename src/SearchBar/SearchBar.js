@@ -19,7 +19,7 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <div className={s.SearchBar}>
+            <div className={s.searchBar}>
                 <h1>Wikipedia Search</h1>
                 <form onSubmit={this.handleSearchSubmit}>
                     <input
@@ -27,7 +27,7 @@ class SearchBar extends Component {
                         placeholder="Введите запрос"
                         autoFocus
                         onChange={this.handleSearchChange} />
-                    <button className={s.SearchBarBtn}>
+                    <button className={s.submit}>
                     Поиск
                     </button>
                 </form>
