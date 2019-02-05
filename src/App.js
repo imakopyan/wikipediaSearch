@@ -1,24 +1,52 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import SearchBar from './SearchBar';
+import SearchList from './SearchList';
+import parseJson from './parseJson';
+
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchQuery: '',
+      submit: false,
+      searchResults: [],
+    };
+    this.handleSearch = this.handleSearch.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+
+  }
+
+
+  handleSearch() {
+    const url = `https://ru.wikipedia.org/w/api.php?action=opensearch&origin=*&format=json&formatversion=2&search=${encodeURIComponent(this.state.searchQuery)}`;
+    Promise.resolve(fetch(url, {cache: 'no-cache'}))
+    .then((response) => {
+      if (!response.ok) throw new Error('Error');
+      return response.json();
+    })
+    .then(parseJson)
+    .then((searchResults) => this.setState({searchResults, isLoading: false}))
+    .catch((e) => this.setState({isLoading: false, hasError: true}));
+  }
+  
+  handleChange(searchQuery) {
+    this.setState({
+      searchQuery,
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+      <SearchBar 
+        onSearchSubmit={this.handleSearch}
+        onSearchChange={this.handleChange}
+      />
+      <SearchList
+      result={this.state.searchResults} />
         </header>
       </div>
     );

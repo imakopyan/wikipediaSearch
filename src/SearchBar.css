@@ -1,0 +1,9 @@
+@import url('/src/logo.svg');
+
+.SearchBar-btn {
+    cursor: pointer;
+}
+
+.SearchBar form {
+    display: flex;
+}
