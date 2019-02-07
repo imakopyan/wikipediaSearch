@@ -51,7 +51,6 @@ class App extends Component {
   }
   
   error = () =>  {
-    console.log(this.state.searchResults.length);
     if (this.state.searchResults.length === 0) {
       this.setState ({ hasError: true}) // ???
      };
@@ -70,7 +69,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.hasError);
     let newArray;
     if (this.state.sortType === 2) {
       newArray =  this.state.searchResults.slice().sort((a,b) =>  {
