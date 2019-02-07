@@ -20,9 +20,9 @@ class SearchBar extends Component {
     render() {
         return (
             <div className={s.searchBar}>
-                <h1>Wikipedia Search</h1>
                 <form onSubmit={this.handleSearchSubmit}>
                     <input
+                        className={s.input}
                         type="text"
                         placeholder="Введите запрос"
                         autoFocus

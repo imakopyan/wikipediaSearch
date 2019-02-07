@@ -1,0 +1,13 @@
+.dropdown {
+  padding: 4px 0;
+}
+
+.customSelect {
+  height: 36px;
+  position: relative;
+  padding: 8px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+}

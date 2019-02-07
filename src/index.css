@@ -13,7 +13,3 @@ code {
     monospace;
 }
 
-input {
-  font-size: calc(10px + 2vmin);
-  width: 440px;
-}

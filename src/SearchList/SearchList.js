@@ -8,9 +8,8 @@ render() {
     = this.props.result.map((result) =>
         <SearchResult
           title={result.title}
-          description={result.description}
-          link={result.link}
-          key={result.link} />
+          description={result.snippet}
+          key={result.pageid} />
       );
     return (
       <section className={s.searchList}>
